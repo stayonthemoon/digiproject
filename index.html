@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DRK-26-001 | Aircraft Simulator</title>
+  <title>Aircraft Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -18,7 +18,7 @@
     <section class="dashboard">
       <div class="screen-wrap">
         <div class="screen-label">LED SCREEN 128 * 64</div><canvas id="oled" width="512" height="256"
-          aria-label="Simulated OLED display"></canvas>
+          aria-label="LED display"></canvas>
         <div class="leds">
           <div><span class="led green" id="powerLed"></span>POWER</div>
           <div><span class="led blue" id="engineLed"></span>ENGINE</div>
@@ -43,7 +43,7 @@
             role="switch" /><span class="switch-track"></span><small>Main system power</small></label>
         <label class="switch-card"><span class="tag">SW2</span><strong>ENGINE</strong><input id="engine" type="checkbox"
             role="switch" /><span class="switch-track"></span><small>Engine start / stop</small></label>
-        <div class="slider-card"><span class="tag">RP1 · 10kΩ</span><label
+        <div class="slider-card"><label
             for="throttle"><strong>THROTTLE</strong></label><input id="throttle" type="range" min="0" max="100"
             value="0" /><output id="throttleOutput">0%</output><small>RPM</small></div>
         <div class="slider-card"><label for="altitude"><strong>ALTITUDE
