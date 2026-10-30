@@ -439,7 +439,7 @@ function prepareOLED() {
 // draws the simulator name at the top of the OLED screen
 function drawOLEDHeader() {
     ctx.font = '20px monospace';
-    ctx.fillText('DRK-26-001   SIM', 22, 32);
+    ctx.fillText('Fancy name of the aircraft', 22, 32);
 
     ctx.beginPath();
     ctx.moveTo(20, 45);
