@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRK-26-001 | Aircraft Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="panel">
+    <header>
+      <div>
+        <h1>Aircraft Simulator</h1>
+      </div><span class="supply">5V DC</span>
+    </header>
+    <section class="dashboard">
+      <div class="screen-wrap">
+        <div class="screen-label">LED SCREEN 128 * 64</div><canvas id="oled" width="512" height="256"
+          aria-label="Simulated OLED display"></canvas>
+        <div class="leds">
+          <div><span class="led green" id="powerLed"></span>POWER</div>
+          <div><span class="led blue" id="engineLed"></span>ENGINE</div>
+          <div><span class="led red" id="errorLed"></span>ERROR</div>
+        </div>
+      </div>
+      <div class="status">
+        <h2>Flight</h2>
+        <div class="readout"><span>System</span><strong id="systemText">OFF</strong></div>
+        <div class="readout"><span>Engine</span><strong id="engineText">OFF</strong></div>
+        <div class="readout"><span>Throttle</span><strong id="throttleText">0%</strong></div>
+        <div class="readout"><span>Altitude</span><strong id="altitudeText">0 ft</strong></div>
+        <div class="readout"><span>Flight mode</span><strong id="modeText">GROUND</strong></div>
+        <div class="readout"><span>Audio</span><strong id="audioText">READY</strong></div>
+        <p id="message" class="message" role="status">Switch POWER on to FLY!</p>
+      </div>
+    </section>
+    <section class="controls">
+      <h2>Controls</h2>
+      <div class="control-grid">
+        <label class="switch-card"><span class="tag">SW1</span><strong>POWER</strong><input id="power" type="checkbox"
+            role="switch" /><span class="switch-track"></span><small>Main system power</small></label>
+        <label class="switch-card"><span class="tag">SW2</span><strong>ENGINE</strong><input id="engine" type="checkbox"
+            role="switch" /><span class="switch-track"></span><small>Engine start / stop</small></label>
+        <div class="slider-card"><span class="tag">RP1 · 10kΩ</span><label
+            for="throttle"><strong>THROTTLE</strong></label><input id="throttle" type="range" min="0" max="100"
+            value="0" /><output id="throttleOutput">0%</output><small>RPM</small></div>
+        <div class="slider-card"><label for="altitude"><strong>ALTITUDE
+              CONTROL</strong></label><input id="altitude" type="range" min="0" max="100" value="0" /><output
+            id="altitudeOutput">0%</output><small>Altitude</small></div>
+        <div class="mode-card"><span class="tag">U2 Switch</span><label for="mode"><strong>FLIGHT
+              MODE</strong></label><select id="mode">
+            <option value="GROUND">GROUND</option>
+            <option value="FLIGHT">FLIGHT</option>
+            <option value="LAND">LAND</option>
+          </select><small>Three-position digital input</small></div>
+        <div class="mode-card"><span class="tag">KT148A</span><strong>SPEAKER</strong><button id="audioToggle"
+            type="button">Enable sound</button><small>Browser-generated audio</small></div>
+      </div>
+    </section>
+    <footer><button id="reset" type="button">Reset simulator</button></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
